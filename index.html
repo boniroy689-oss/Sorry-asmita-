@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I'm Sorry, Asmita ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0b12, #251326, #100b13);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: beat 1.4s infinite;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #cfc3ce;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            padding: 30px 25px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+
+        .sorry {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 28px;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            color: #211321;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:active {
+            transform: scale(0.94);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .final {
+            margin-top: 25px;
+            animation: appear 1s ease;
+        }
+
+        .final h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .final p {
+            color: #dddddd;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 20px;
+            animation: floatUp 6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes beat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .heart {
+                font-size: 55px;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤️</div>
+
+        <h1>Asmita...</h1>
+
+        <p class="subtitle">
+            Please give me a minute.
+        </p>
+
+
+        <div class="card">
+
+            <div class="message">
+
+                I know you're angry with me.
+
+                <br><br>
+
+                And honestly, I understand.
+
+                <div class="sorry">
+                    I'm really sorry, Asmita. 🥺
+                </div>
+
+                I know saying sorry can't magically fix everything,
+                but I genuinely regret what I did.
+
+                <br><br>
+
+                I don't want to make excuses.
+
+                <br>
+
+                I just want you to know that
+                <b>I really am sorry.</b>
+
+            </div>
+
+
+            <button onclick="showMessage()">
+                One more thing... 🥺
+            </button>
+
+
+            <div id="finalMessage" class="final hidden">
+
+                <h2>Can we talk? 🫂</h2>
+
+                <p>
+
+                    I know you're not texting me right now,
+                    and I'll respect your space.
+
+                    <br><br>
+
+                    But whenever you're ready,
+                    I'd really like to talk to you once.
+
+                    <br><br>
+
+                    I just want to listen to you
+                    and make things right.
+
+                    <br><br>
+
+                    No pressure.
+
+                    <br>
+
+                    Take your time.
+
+                </p>
+
+
+                <div class="signature">
+
+                    I'm really sorry. ❤️
+
+                    <br><br>
+
+                    — Boni
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function showMessage() {
+
+            document
+                .getElementById("finalMessage")
+                .classList.remove("hidden");
+
+            document.querySelector("button").style.display = "none";
+
+            createHearts();
+
+        }
+
+
+        function createHearts() {
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "floating-heart";
+
+                heart.innerHTML = "❤️";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 20) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(function () {
+
+                    heart.remove();
+
+                }, 8000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
